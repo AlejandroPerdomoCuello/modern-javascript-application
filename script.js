@@ -87,7 +87,7 @@ function getFutureTemp() {
         .catch((err) => {
             // Do something for an error here
             console.log("There was an Error getting the 5 days ahead Data")
-        });
+        }, 3000); // the 3000 is the amounts of miliseconds to wait until the data is here, in this case 3 seconds
 
 };
 
