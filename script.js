@@ -22,7 +22,7 @@ const weather52 = "&units=metric&appid=50b9caeb9f022d5e06aded241bfda347";
 
 // Function for the Button press that gets the City name from the user
 document.getElementById("mainBtn")
-    .addEventListener("click", runTwoFunctions);
+    .addEventListener("click", runTwoFunctions1);
 
 function getCityName() {
     let city = document.getElementById("cityName1").value;
@@ -57,7 +57,7 @@ function getCityName() {
 
 // a function to run two functions at the same time
 
-function runTwoFunctions () {
+function runTwoFunctions1 () {
     getCityName();
     getFutureTemp();
 };
