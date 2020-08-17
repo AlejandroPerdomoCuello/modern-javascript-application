@@ -79,10 +79,7 @@ function getFutureTemp() {
         })
         .then((data5) => {
             // Work with JSON data here
-            console.log("Now processing data5");
-            let firstDateCity5 = data5.city.name;
-            let firstDateCountry5 = data5.city.country;
-            document.getElementById("output5").innerHTML = "The weather for " + firstDateCity5 + "," + firstDateCountry5;
+            workWithData(data5);
         })
         .catch((err) => {
             // Do something for an error here
@@ -132,6 +129,25 @@ function getCityName2() {
             // Do something for an error here
             console.log("There was an Error getting the second Data");
         });
+};
+
+// Function to wor with the table data 
+function workWithData(data5) {
+    console.log("Now processing data5");
+
+    document.getElementById("output5").innerHTML += "The weather for " + data5.city.name + ", " + data5.city.country + " is as folloms:";
+    document.getElementById("output5").innerHTML += "<br>";
+    document.getElementById("output5").innerHTML += data5.list[0].dt_txt + ": " + data5.list[0].main.temp + "°C";
+    document.getElementById("output5").innerHTML += "<br>";
+    document.getElementById("output5").innerHTML += data5.list[8].dt_txt + ": " + data5.list[8].main.temp + "°C";
+    document.getElementById("output5").innerHTML += "<br>";
+    document.getElementById("output5").innerHTML += data5.list[16].dt_txt + ": " + data5.list[16].main.temp + "°C";
+    document.getElementById("output5").innerHTML += "<br>";
+    document.getElementById("output5").innerHTML += data5.list[24].dt_txt + ": " + data5.list[24].main.temp + "°C";
+    document.getElementById("output5").innerHTML += "<br>";
+    document.getElementById("output5").innerHTML += data5.list[32].dt_txt + ": " + data5.list[32].main.temp + "°C";
+    document.getElementById("output5").innerHTML += "<br>";
+    document.getElementById("output5").innerHTML += data5.list[40].dt_txt + ": " + data5.list[40].main.temp + "°C";
 };
 
 // Function for the Enter  Key for the cityName1 input
