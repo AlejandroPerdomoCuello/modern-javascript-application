@@ -1,0 +1,103 @@
+@media only screen and (max-width: 480px) {
+
+    /* For mobile phones */
+
+    #mainTemp {
+        width: 90%;
+        float: left;
+        clear: left;
+
+    }
+
+    #secondTemp {
+        width: 90%;
+        float: left;
+        clear: left;
+    }
+
+    footer {
+        width: 90%;
+        float: left;
+        clear: left;
+    }
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 1024px) {
+
+    /* For tables */
+
+    #mainTemp {
+        width: 90%;
+        float: left;
+        clear: left;
+    }
+
+    #secondTemp {
+        width: 90%;
+        float: left;
+        clear: left;
+    }
+
+    footer {
+        width: 90%;
+        float: left;
+        clear: left;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+    /* For computers */
+    
+    #mainTemp {
+        width: 50%;
+        float: left;
+    }
+
+    #secondTemp {
+        width: 50%;
+        float: right;
+    }
+
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+#container {
+    padding: 50px;
+}
+
+h1 {
+    font-size: 30px;
+    font-family: cursive;
+    text-align: center;
+}
+
+#mainTemp {
+    width: 50%;
+    grid-area: "main";
+    float: left;
+}
+
+#secondTemp {
+    width: 50%;
+    grid-area: "second";
+    float: left;
+}
+
+footer {
+    font-size: 16px;
+    font-family: cursive;
+    text-align: center;
+}
+
+p, label, button, input {
+    font-size: 16px;
+    font-family: cursive;
+    text-align: left;
+}
