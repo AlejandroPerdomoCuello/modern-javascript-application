@@ -82,7 +82,6 @@ function getCityName2() {
         })
         .then((data2) => {
             // Work with JSON data here
-            // console.log(data2.main.temp,);
             let number2 = data2.main.temp + "°C";
             document.getElementById("secondOutput").innerHTML = number2;
         })
@@ -135,8 +134,6 @@ function getFutureTemp() {
         })
         .then((data5) => {
             // Work with JSON data here
-            // console.log(data5);
-            // console.log(data5.list[1].dt_txt,);
             let firstDate5 = data5.list[1].dt_txt;
             let firstDateTemp5 = data5.list[1].main.temp;
             let firstDateCity5 = data5.city.name;
