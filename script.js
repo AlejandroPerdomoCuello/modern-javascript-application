@@ -55,6 +55,42 @@ function getCityName() {
         });
 };
 
+// Making the function to get the Temp of the next 5 days
+function getFutureTemp() {
+    let city5 = document.getElementById("cityName1").value;
+
+    // Here we construct the weblink with the proper name
+    let url5 = weather51 + city5 + weather52;
+    console.log(url5);
+
+    // this is new, so I dont know what I am doing
+
+    console.log(fetch(url5));
+
+    fetch(url5)
+        .then((response) => {
+            if (response.ok) {
+                console.log("Success")
+            } else {
+                console.log("Error")
+            }
+
+            return response.json();
+        })
+        .then((data5) => {
+            // Work with JSON data here
+            console.log("Now processing data5");
+            let firstDateCity5 = data5.city.name;
+            let firstDateCountry5 = data5.city.country;
+            document.getElementById("output5").innerHTML = "The weather for " + firstDateCity5 + "," + firstDateCountry5;
+        })
+        .catch((err) => {
+            // Do something for an error here
+            console.log("There was an Error getting the 5 days ahead Data")
+        });
+
+};
+
 // a function to run two functions at the same time
 
 function runTwoFunctions1 () {
@@ -116,39 +152,3 @@ input2.addEventListener("keyup", function (event) {
     }
 });
 
-// Making the function to get the Temp of the next 5 days
-function getFutureTemp() {
-    let city5 = document.getElementById("cityName1").value;
-
-    // Here we construct the weblink with the proper name
-    let url5 = weather51 + city5 + weather52;
-    console.log(url5);
-
-    // this is new, so I dont know what I am doing
-
-    console.log(fetch(url5));
-
-    fetch(url5)
-        .then((response) => {
-            if (response.ok) {
-                console.log("Success")
-            } else {
-                console.log("Error")
-            }
-
-            return response.json();
-        })
-        .then((data5) => {
-            // Work with JSON data here
-            let firstDate5 = data5.list[1].dt_txt;
-            let firstDateTemp5 = data5.list[1].main.temp;
-            let firstDateCity5 = data5.city.name;
-            let firstDateCountry5 = data5.city.country;
-            document.getElementById("output5").innerHTML = "The weather for " + firstDateCity5 + "," + firstDateCountry5 + "are as follow:" < br > "The date and hour are " + firstDate5 + " and the temperature is " + firstDateTemp5 + "°C.";
-        })
-        .catch((err) => {
-            // Do something for an error here
-            console.log("There was an Error getting the 5 days ahead Data")
-        });
-
-};
