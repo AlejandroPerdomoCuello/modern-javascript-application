@@ -120,8 +120,7 @@ function runTwoFunctions1() {
 // All elements below are for the Second Button
 
 // Function for the Button2 press that gets the City name from the user
-document.getElementById("button2")
-    .addEventListener("click", runTwoFunctions2);
+document.getElementById("button2").addEventListener("click", runTwoFunctions2);
 
 // Function to get City name 2 for the second city
 function getCityName2() {
@@ -129,7 +128,7 @@ function getCityName2() {
 
     // Here we construct the weblink with the proper name
 
-    let url2 = weatherFuture1 + city2 + weatherFuture2;
+    let url2 = weatherToday1 + city2 + weatherToday2;
 
     // this is new, so I dont know what I am doing
 
@@ -147,27 +146,27 @@ function getCityName2() {
         })
         .then((data2) => {
             // Work with JSON data here
-            let WeatherTodayCity2 = data.main.temp + "°C";
+            let WeatherTodayCity2 = data2.main.temp + "°C";
             document.getElementById("output2").innerHTML = WeatherTodayCity2;
         })
         .catch((err) => {
             // Do something for an error here
-            console.log("There was an Error getting the second Data");
+            console.log("There was an Error getting Data for the Second City");
         });
 };
 
 function getFutureTemp2() {
-    let city3 = document.getElementById("cityName1").value;
+    let city3 = document.getElementById("cityName2").value;
 
     // Here we construct the weblink with the proper name
-    let url3 = weatherFuture1 + city3 + weatherFuture2;
-    console.log(url3);
+    let url4 = weatherFuture1 + city3 + weatherFuture2;
+    console.log(url4);
 
     // this is new, so I dont know what I am doing
 
-    console.log(fetch(url3));
+    console.log(fetch(url4));
 
-    fetch(url3)
+    fetch(url4)
         .then((response) => {
             if (response.ok) {
                 console.log("Success")
