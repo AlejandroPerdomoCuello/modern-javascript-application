@@ -2,7 +2,7 @@
 
     /* For mobile phones */
 
-    #mainTemp {
+    #temp1 {
         width: 90%;
         float: left;
         clear: left;
@@ -27,7 +27,7 @@
 
     /* For tables */
 
-    #mainTemp {
+    #temp1 {
         width: 90%;
         float: left;
         clear: left;
@@ -51,7 +51,7 @@
 
     /* For computers */
     
-    #mainTemp {
+    #temp1 {
         width: 50%;
         float: left;
     }
@@ -78,7 +78,7 @@ h1 {
     text-align: center;
 }
 
-#mainTemp {
+#temp1 {
     width: 50%;
     grid-area: "main";
     float: left;
