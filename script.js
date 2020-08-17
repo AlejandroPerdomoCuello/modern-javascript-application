@@ -22,7 +22,7 @@ const weather52 = "&units=metric&appid=50b9caeb9f022d5e06aded241bfda347";
 
 // Function for the Button press that gets the City name from the user
 document.getElementById("mainBtn")
-    .addEventListener("click", getCityName);
+    .addEventListener("click", changeHandler);
 
 function getCityName() {
     let city = document.getElementById("cityName1").value;
@@ -53,6 +53,13 @@ function getCityName() {
             // Do something for an error here
             console.log("There was an Error getting the Main Data");
         });
+};
+
+// a function to run two functions at the same time
+
+function changeHandler (evt) {
+    getCityName();
+    getFutureTemp();
 };
 
 // Function for the Button2 press that gets the City name from the user
@@ -90,7 +97,6 @@ function getCityName2() {
             console.log("There was an Error getting the second Data");
         });
 };
-
 
 // Function for the Enter  Key for the cityName1 input
 let input = document.getElementById("cityName1");
