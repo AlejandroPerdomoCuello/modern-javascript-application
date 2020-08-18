@@ -20,11 +20,12 @@ const weatherFuture1 = "https://api.openweathermap.org/data/2.5/forecast?q=";
 
 const weatherFuture2 = "&units=metric&appid=50b9caeb9f022d5e06aded241bfda347";
 
-// All elements below are for the First Button
+// Everything below is for Button1
 
-// Function for the Button press that gets the City name from the user
+// Function for Button1
 document.getElementById("button1").addEventListener("click", runTwoFunctions1);
 
+// Function that gets the Temperature of Today for City 1 and Displays it
 function getCityName() {
     let city = document.getElementById("cityName1").value;
 
@@ -38,9 +39,9 @@ function getCityName() {
     fetch(url)
         .then((response) => {
             if (response.ok) {
-                console.log("Success")
+                console.log("Success getting the Temperature Today of City1")
             } else {
-                console.log("Error")
+                console.log("Error getting the Temeprature Today of City1")
             }
 
             return response.json();
@@ -52,17 +53,16 @@ function getCityName() {
         })
         .catch((err) => {
             // Do something for an error here
-            console.log("There was an Error getting the Main Data");
+            console.log("Error getting and working with the Temp for Today of City1");
         });
 };
 
-// Making the function to get the Temp of the next 5 days of City 1
+// Function to get the Future Temp of City 1
 function getFutureTemp() {
     let city1 = document.getElementById("cityName1").value;
 
     // Here we construct the weblink with the proper name
     let url1 = weatherFuture1 + city1 + weatherFuture2;
-    console.log(url1);
 
     // this is new, so I dont know what I am doing
 
@@ -71,9 +71,9 @@ function getFutureTemp() {
     fetch(url1)
         .then((response) => {
             if (response.ok) {
-                console.log("Success")
+                console.log("Success getting the Future Temperature for City 1")
             } else {
-                console.log("Error")
+                console.log("Error getting the Future Temperature of City1")
             }
 
             return response.json();
@@ -84,12 +84,12 @@ function getFutureTemp() {
         })
         .catch((err) => {
             // Do something for an error here
-            console.log("There was an Error getting the 5 days ahead Data")
-        }, 3000); // the 3000 is the amounts of miliseconds to wait until the data is here, in this case 3 seconds
+            console.log("Error getting the Future Temperature of City1")
+        }, 5000); // the 3000 is the amounts of miliseconds to wait until the data is here, in this case 3 seconds
 
 };
 
-// Function to wor with the table data for city 1
+// Function to work with the table data1 for Future Temp of City 1
 function workWithData(data1) {
     console.log("Now processing data1");
 
@@ -108,21 +108,28 @@ function workWithData(data1) {
     document.getElementById("output11").innerHTML += data1.list[40].dt_txt + ": " + data1.list[40].main.temp + "°C";
 };
 
-// a function to run two functions at the same time
-
+// Function to run two functions at the press of Button1
 function runTwoFunctions1() {
     getCityName();
     getFutureTemp();
 };
 
+// Function that clicks Button 1
+let input = document.getElementById("cityName1");
+input.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("button1").click();
+    }
+});
 
 
-// All elements below are for the Second Button
+// Everything below is for Button2
 
-// Function for the Button2 press that gets the City name from the user
+// Function for the Button2
 document.getElementById("button2").addEventListener("click", runTwoFunctions2);
 
-// Function to get City name 2 for the second city
+// Function that gets the Temperature of Today for City 1 and Displays it
 function getCityName2() {
     let city2 = document.getElementById("cityName2").value;
 
@@ -137,9 +144,9 @@ function getCityName2() {
     fetch(url2)
         .then((res) => {
             if (res.ok) {
-                console.log("Success, Again")
+                console.log("Success getting the Temp of Today for City2")
             } else {
-                console.log("Error, Again")
+                console.log("Error getting the Temp of Today for City2")
             }
 
             return res.json();
@@ -151,10 +158,11 @@ function getCityName2() {
         })
         .catch((err) => {
             // Do something for an error here
-            console.log("There was an Error getting Data for the Second City");
+            console.log("Error getting and working with the Temperature for Today for City2");
         });
 };
 
+// Function to get Future Temp of City2
 function getFutureTemp2() {
     let city3 = document.getElementById("cityName2").value;
 
@@ -169,59 +177,49 @@ function getFutureTemp2() {
     fetch(url4)
         .then((response) => {
             if (response.ok) {
-                console.log("Success")
+                console.log("Success getting the Future Temp of City2")
             } else {
-                console.log("Error")
+                console.log("Error Getting the Future Temp of City2")
             }
             return response.json();
         })
-        .then((data2) => {
+        .then((data3) => {
             // Work with JSON data here
-            workWithData(data2);
+            workWithData2(data3);
         })
         .catch((err) => {
             // Do something for an error here
-            console.log("There was an Error getting the 5 days ahead Data")
+            console.log("Error getting and working with the Future Temp for City2")
         }, 3000); // the 3000 is the amounts of miliseconds to wait until the data is here, in this case 3 seconds
 
 };
 
-// Function to wor with the table data for city 2
-function workWithData2(data2) {
-    console.log("Now processing data2");
+// Function to work with the table data3 for Future Temp of City 2
+function workWithData2(data3) {
+    console.log("Now processing data3");
 
-    document.getElementById("output22").innerHTML += "The weather for " + data2.city.name + ", " + data2.city.country + " is as follows:";
+    document.getElementById("output22").innerHTML += "The weather for " + data3.city.name + ", " + data3.city.country + " is as follows:";
     document.getElementById("output22").innerHTML += "<br>";
-    document.getElementById("output22").innerHTML += data2.list[0].dt_txt + ": " + data2.list[0].main.temp + "°C";
+    document.getElementById("output22").innerHTML += data3.list[0].dt_txt + ": " + data3.list[0].main.temp + "°C";
     document.getElementById("output22").innerHTML += "<br>";
-    document.getElementById("output22").innerHTML += data2.list[8].dt_txt + ": " + data2.list[8].main.temp + "°C";
+    document.getElementById("output22").innerHTML += data3.list[8].dt_txt + ": " + data3.list[8].main.temp + "°C";
     document.getElementById("output22").innerHTML += "<br>";
-    document.getElementById("output22").innerHTML += data2.list[16].dt_txt + ": " + data2.list[16].main.temp + "°C";
+    document.getElementById("output22").innerHTML += data3.list[16].dt_txt + ": " + data3.list[16].main.temp + "°C";
     document.getElementById("output22").innerHTML += "<br>";
-    document.getElementById("output22").innerHTML += data2.list[24].dt_txt + ": " + data2.list[24].main.temp + "°C";
+    document.getElementById("output22").innerHTML += data3.list[24].dt_txt + ": " + data3.list[24].main.temp + "°C";
     document.getElementById("output22").innerHTML += "<br>";
-    document.getElementById("output22").innerHTML += data2.list[32].dt_txt + ": " + data2.list[32].main.temp + "°C";
+    document.getElementById("output22").innerHTML += data3.list[32].dt_txt + ": " + data3.list[32].main.temp + "°C";
     document.getElementById("output22").innerHTML += "<br>";
-    document.getElementById("output22").innerHTML += data2.list[40].dt_txt + ": " + data2.list[40].main.temp + "°C";
+    document.getElementById("output22").innerHTML += data3.list[40].dt_txt + ": " + data3.list[40].main.temp + "°C";
 };
 
-// a function to run two functions at the same time
-
+// Function to run two functions at the press of Button2
 function runTwoFunctions2() {
     getCityName2();
     getFutureTemp2();
 };
 
-// Function for the Enter  Key for the cityName1 input
-let input = document.getElementById("cityName1");
-input.addEventListener("keyup", function (event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("button1").click();
-    }
-});
-
-// Function for the Enter  Key for the cityName2 input
+// Function that clicks Button2
 let input2 = document.getElementById("cityName2");
 input2.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
