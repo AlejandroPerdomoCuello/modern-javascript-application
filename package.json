@@ -1,0 +1,23 @@
+{
+  "name": "modern-javascript-application",
+  "version": "1.0.0",
+  "description": "Within the next 5 days, I will be making my already working Weather App, into something that anyone can understand with easy, by restructuring it all.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlejandroPerdomoCuello/modern-javascript-application.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlejandroPerdomoCuello/modern-javascript-application/issues"
+  },
+  "homepage": "https://github.com/AlejandroPerdomoCuello/modern-javascript-application#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
