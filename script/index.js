@@ -21,10 +21,10 @@ const weatherFuture2 = "&units=metric&appid=50b9caeb9f022d5e06aded241bfda347";
 document.getElementById("button1").addEventListener("click", runTwoFunctions1);
 
 // Function that gets the Temperature of Today for City 1 and Displays it
-import getCityName from "/getCityTempToday.js";
+import getCityName from "./getCityTempToday.js";
 
 // Function to get the Future Temp of City 1
-import getFutureTemp from "/getFutureTemp.js";
+import getFutureTemp from "./getFutureTemp.js";
 
 // Function to work with the table data1 for Future Temp of City 1
 
@@ -50,10 +50,10 @@ input.addEventListener("keyup", function (event) {
 document.getElementById("button2").addEventListener("click", runTwoFunctions2);
 
 // Function that gets the Temperature of Today for City 1 and Displays it
-import getCityName2 from "/getCityTempToday.js";
+import getCityName2 from "./getCityTempToday.js";
 
 // Function to get Future Temp of City2
-import getFutureTemp2 from "/getFutureTemp2.js";
+import getFutureTemp2 from "./getFutureTemp2.js";
 
 // Function to work with the table data3 for Future Temp of City 2
 
